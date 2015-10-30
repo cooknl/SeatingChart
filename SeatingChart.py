@@ -123,11 +123,26 @@ class Classroom:
         self.depth = depth
         self.roster = []
         self.assignments = []
+        
+    def __repr__(self):
+        s = 'label = ' + self.label + '\n\n'
+        s = s + 'width: ' +  str(self.width) + '\n'
+        s = s + 'depth: ' +  str(self.depth) + '\n'
+        s = s + '\nRoster\n'
+        s = s + '------\n'
+        s = s + ''.join(self.roster)
+        s = s + '\nAssignments\n'
+        s = s + '-----------\n'
+        s = s + ''.join(self.assignments)
+        return s
 
 
-seat_1 = Seat(0, 0)
+class_room = Classroom('1st Period Advanced',5,5)
+print(class_room)
 
-print(seat_1)
+
+#seat_1 = Seat(0, 0)
+#print(seat_1)
 
 
 #st_1 = Student('One')
